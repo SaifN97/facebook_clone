@@ -15,7 +15,7 @@
                     </svg>
                 </div>
 
-                <input type="text" name="search" class="rounded-full pl-8 w-56 h-8 bg-gray-200 focus:outline-none focus:outline-shadow text-sm" placeholder="Search Facebook">
+                <input type="text" name="search" class="rounded-full pl-8 w-56 h-8 bg-gray-200 focus:outline-none focus:shadow-outline text-sm" placeholder="Search Facebook">
             </div>
         </div>
     </div>
