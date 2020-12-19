@@ -1,12 +1,20 @@
 <template>
-    <div>STart
+<div class="flex flex-col flex-1 h-screen">
+    <Nav/>
+
     <router-view></router-view>
-    </div>
+</div>
 </template>
 
 <script>
+import Nav from './Nav'
+
 export default {
-    name: "App"
+    name: "App",
+
+    components: {
+        Nav
+    }
 }
 </script>
 
