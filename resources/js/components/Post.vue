@@ -6,12 +6,12 @@
                 <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*" alt="Profile image of a user" class="w-8 h-8 object-cover rounded-full">
             </div>
             <div class="ml-6">
-                <div class="text-sm font-bold">Name User</div>
+                <div class="text-sm font-bold">{{ post.data.attributes.posted_by.data.attributes.name }}</div>
                 <div class="text-sm text-gray-600">1 hour ago</div>
             </div>
         </div>
         <div class="mt-4">
-            <p>Not having fun at all</p>
+            <p>{{ post.data.attributes.body }}</p>
         </div>
     </div>
     <div class="w-full">
@@ -48,7 +48,11 @@
 
 <script>
 export default {
-    name: "Post"
+    name: "Post",
+
+    props: [
+        'post',
+    ]
 }
 </script>
 

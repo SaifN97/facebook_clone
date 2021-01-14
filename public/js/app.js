@@ -2091,7 +2091,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Post"
+  name: "Post",
+  props: ['post']
 });
 
 /***/ }),
@@ -2143,6 +2144,21 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     NewPost: _components_NewPost__WEBPACK_IMPORTED_MODULE_0__["default"],
     Post: _components_Post__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      posts: null
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRmMzhhZmI3MmUwNzA0OTBlNDRkMWQwOTkzN2NkZmViOWZkZjkzNTBmZTAyZjIyNzhmZmUxNDQyYzkyMTRlMjE3NmIyODJhMTY5MDNjMzE3In0.eyJhdWQiOiIyIiwianRpIjoiZGYzOGFmYjcyZTA3MDQ5MGU0NGQxZDA5OTM3Y2RmZWI5ZmRmOTM1MGZlMDJmMjI3OGZmZTE0NDJjOTIxNGUyMTc2YjI4MmExNjkwM2MzMTciLCJpYXQiOjE2MTA2MjY0NDIsIm5iZiI6MTYxMDYyNjQ0MiwiZXhwIjoxNjQyMTYyNDQxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VtWIlpju6Z5HfDncT7FhVKN_Fnfe6L-wDZpv6mgPAbH-TJHfZtcFTF86qFHZy_XDUQv1GQ8UJn5d6RVlKVePAQyR7dmAPX59VmtckdCewXOWsKY2pSDXltwfAhSDtlKE65QwfXbL5cniEeetQhHqTi6WsO4_x49Z44UJfH8SvEmQ3bqpdWRUbpU6fDVI322ojk6mRph6Nv8y0cFNxVPPVof20p2f2HHEXYc6vE_QK4atFOFSXJ74M-886sMQSG9XkWfZEdZBC-I-bD41qml-9qrTI1_o4Eb6LnPEuIR89ZeZZLA5Er9UhhQHcHoCT4gQ7JIhnKt3_63fG9Rjh6VHi3QfxzFzuP601Kv0kmNCVxSYf9TZik38FP-yXIfJTuuvxFPvII_xwymG1AWjzP6c8_VVjfPmesfebwSiB4dvwol9_dsaDZY4A4HXceD13Lou__XAGielQVW05fz2d4MEI6yMx7jmmrA3pBwFRpYGIVyuScD8FUYsvzmS8NsrYqhkViSK-zgrUB4ZGi_HpxeCeqxVZ4iLmSo3sGqfHlufBJlSz-Vv4fUD_-hTL0iIxevgYa6HFUK5gOM7YCtyiLkvpdYkFoemyijXNoFn8kmdmJXLJPjKNYnC_z6q7Qm9ig4ioS4LeVGSxIMtxvnMtApkAH8T866RcpeMVSCDR6_EaAE';
+    axios.get('/api/posts').then(function (res) {
+      _this.posts = res.data;
+    })["catch"](function (error) {
+      console.log('Unable to fetch posts');
+    });
   }
 });
 
@@ -20133,7 +20149,27 @@ var render = function() {
     "div",
     { staticClass: "bg-white rounded shadow w-2/3 mt-6 overflow-hidden" },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "flex flex-col p-4" }, [
+        _c("div", { staticClass: "flex items-center" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "ml-6" }, [
+            _c("div", { staticClass: "text-sm font-bold" }, [
+              _vm._v(
+                _vm._s(_vm.post.data.attributes.posted_by.data.attributes.name)
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-sm text-gray-600" }, [
+              _vm._v("1 hour ago")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-4" }, [
+          _c("p", [_vm._v(_vm._s(_vm.post.data.attributes.body))])
+        ])
+      ]),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
@@ -20241,33 +20277,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex flex-col p-4" }, [
-      _c("div", { staticClass: "flex items-center" }, [
-        _c("div", { staticClass: "w-8" }, [
-          _c("img", {
-            staticClass: "w-8 h-8 object-cover rounded-full",
-            attrs: {
-              src:
-                "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
-              alt: "Profile image of a user"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "ml-6" }, [
-          _c("div", { staticClass: "text-sm font-bold" }, [
-            _vm._v("Name User")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "text-sm text-gray-600" }, [
-            _vm._v("1 hour ago")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-4" }, [
-        _c("p", [_vm._v("Not having fun at all")])
-      ])
+    return _c("div", { staticClass: "w-8" }, [
+      _c("img", {
+        staticClass: "w-8 h-8 object-cover rounded-full",
+        attrs: {
+          src:
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
+          alt: "Profile image of a user"
+        }
+      })
     ])
   },
   function() {
@@ -20356,8 +20374,14 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "flex flex-col items-center py-4" },
-    [_c("NewPost"), _vm._v(" "), _c("Post")],
-    1
+    [
+      _c("NewPost"),
+      _vm._v(" "),
+      _vm._l(_vm.posts.data, function(post) {
+        return _c("Post", { key: post.data.id, attrs: { post: post } })
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []
