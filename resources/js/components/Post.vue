@@ -7,15 +7,15 @@
             </div>
             <div class="ml-6">
                 <div class="text-sm font-bold">{{ post.data.attributes.posted_by.data.attributes.name }}</div>
-                <div class="text-sm text-gray-600">1 hour ago</div>
+                <div class="text-sm text-gray-600">{{ post.data.attributes.posted_at }}</div>
             </div>
         </div>
         <div class="mt-4">
             <p>{{ post.data.attributes.body }}</p>
         </div>
     </div>
-    <div class="w-full">
-        <img class="w-full" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*" alt="Profile image of a user">
+    <div class="w-full" v-if="post.data.attributes.image">
+        <img class="w-full" :src="post.data.attributes.image" alt="Profile image of a user">
     </div>
 
     <div class="px-4 pt-2 flex justify-between text-gray-700 text-sm">

@@ -2153,7 +2153,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRmMzhhZmI3MmUwNzA0OTBlNDRkMWQwOTkzN2NkZmViOWZkZjkzNTBmZTAyZjIyNzhmZmUxNDQyYzkyMTRlMjE3NmIyODJhMTY5MDNjMzE3In0.eyJhdWQiOiIyIiwianRpIjoiZGYzOGFmYjcyZTA3MDQ5MGU0NGQxZDA5OTM3Y2RmZWI5ZmRmOTM1MGZlMDJmMjI3OGZmZTE0NDJjOTIxNGUyMTc2YjI4MmExNjkwM2MzMTciLCJpYXQiOjE2MTA2MjY0NDIsIm5iZiI6MTYxMDYyNjQ0MiwiZXhwIjoxNjQyMTYyNDQxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.VtWIlpju6Z5HfDncT7FhVKN_Fnfe6L-wDZpv6mgPAbH-TJHfZtcFTF86qFHZy_XDUQv1GQ8UJn5d6RVlKVePAQyR7dmAPX59VmtckdCewXOWsKY2pSDXltwfAhSDtlKE65QwfXbL5cniEeetQhHqTi6WsO4_x49Z44UJfH8SvEmQ3bqpdWRUbpU6fDVI322ojk6mRph6Nv8y0cFNxVPPVof20p2f2HHEXYc6vE_QK4atFOFSXJ74M-886sMQSG9XkWfZEdZBC-I-bD41qml-9qrTI1_o4Eb6LnPEuIR89ZeZZLA5Er9UhhQHcHoCT4gQ7JIhnKt3_63fG9Rjh6VHi3QfxzFzuP601Kv0kmNCVxSYf9TZik38FP-yXIfJTuuvxFPvII_xwymG1AWjzP6c8_VVjfPmesfebwSiB4dvwol9_dsaDZY4A4HXceD13Lou__XAGielQVW05fz2d4MEI6yMx7jmmrA3pBwFRpYGIVyuScD8FUYsvzmS8NsrYqhkViSK-zgrUB4ZGi_HpxeCeqxVZ4iLmSo3sGqfHlufBJlSz-Vv4fUD_-hTL0iIxevgYa6HFUK5gOM7YCtyiLkvpdYkFoemyijXNoFn8kmdmJXLJPjKNYnC_z6q7Qm9ig4ioS4LeVGSxIMtxvnMtApkAH8T866RcpeMVSCDR6_EaAE';
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY0Yzk2ODQ2MjY5ZTQ5ZDJkMTgzNzZhYzZjMGU4ZTU5NzBlNDAxMzhlYTcyM2M5ZDBkNTZkMjdkNTFlMjkxODI0ODUyODIyNjAyNjlkYTdiIn0.eyJhdWQiOiIyIiwianRpIjoiNjRjOTY4NDYyNjllNDlkMmQxODM3NmFjNmMwZThlNTk3MGU0MDEzOGVhNzIzYzlkMGQ1NmQyN2Q1MWUyOTE4MjQ4NTI4MjI2MDI2OWRhN2IiLCJpYXQiOjE2MTA3MTYxODQsIm5iZiI6MTYxMDcxNjE4NCwiZXhwIjoxNjQyMjUyMTg0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.d-BBUp789US5P2pt_Ce48LjPqlVl0wPB-AaG2Pgb8PgQpYp7JF-_fciD2LRyDQLKTn9__BR8tx4cA_eMU6wAIWqjvQBFWD-oUb2gU7hAPf4L67dqF1mdbiA5z9yhTOzK1RWZ_FgKbhtr4ZzCEIEPZ4elDKU269A_OERj0Xvilf_cnZ2-DiMJ9MQTTClFazLg5kbwH01e_mRDacftngD_OIM_2Fr_laEMO5cFnZwXY9gPQJ-4lsrvpK4sJn0d-t9rQRKyAWW1v98sgIw_AoqD_r0YApfeRUH95Nq1oVJaF0RDwBzKo204cw_YPHdpIViL64dtvlgoBafjWi0GhTRDZtg84Gfaj0iJyrw4Ak45yKtKRUPUOMegd_prYLOToagZy3jRSFcqFQ_CVOfEe6UhiEmSmgZGxGgG_R_2SxasyS9oFoVFqG2g5rD7g4AB9q6H0ule5jcdYMxSvQ9f2JognY5WqWIZfA7sYuBS41DPr_D1IVrt83i2ujAFnewHbQLO9XXk1xpy2A3aTUuiFwWk9RNuoqg7mW2Ly-v-Xf7HHpPn8-b3AetMAG3-_D0x_EP0tBjNivVjpYRftrlXKLQh0R6ubE0XFVt4I7spE6E0YZovbSBqg-WWNW20iFLOjrnFmepvTelCrUF2vg6EpS4SQb4GQIRKdktp1Dv4zW43ehk';
     axios.get('/api/posts').then(function (res) {
       _this.posts = res.data;
     })["catch"](function (error) {
@@ -20161,7 +20161,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "text-sm text-gray-600" }, [
-              _vm._v("1 hour ago")
+              _vm._v(_vm._s(_vm.post.data.attributes.posted_at))
             ])
           ])
         ]),
@@ -20171,7 +20171,17 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm.post.data.attributes.image
+        ? _c("div", { staticClass: "w-full" }, [
+            _c("img", {
+              staticClass: "w-full",
+              attrs: {
+                src: _vm.post.data.attributes.image,
+                alt: "Profile image of a user"
+              }
+            })
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
@@ -20200,7 +20210,7 @@ var render = function() {
             _c("p", [_vm._v("Keanu Reeves and 787 others")])
           ]),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(1)
         ]
       ),
       _vm._v(" "),
@@ -20280,21 +20290,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "w-8" }, [
       _c("img", {
         staticClass: "w-8 h-8 object-cover rounded-full",
-        attrs: {
-          src:
-            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
-          alt: "Profile image of a user"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full" }, [
-      _c("img", {
-        staticClass: "w-full",
         attrs: {
           src:
             "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
