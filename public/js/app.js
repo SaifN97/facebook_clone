@@ -2176,6 +2176,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Post_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Post.vue */ "./resources/js/components/Post.vue");
 //
 //
 //
@@ -2184,12 +2185,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Post: _components_Post_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   name: 'Show',
   data: function data() {
     return {
       user: null,
-      loading: true
+      posts: null,
+      userLoading: true,
+      postLoading: true
     };
   },
   mounted: function mounted() {
@@ -2201,7 +2222,15 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (err) {
       console.error('Unable to fetch users from the server.');
     })["finally"](function () {
-      _this.loading = false;
+      _this.userLoading = false;
+    });
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImEyYTA1NmE2MTIwOTNhZjg4ZTFlNTkwNWExMmJjMjM1OTQwMmZmNTU2OGQyYTliYTY5M2Q0NGVjZjU4ZWE2ZDRkYzRmOTYzMTMxNWJlZGUwIn0.eyJhdWQiOiIyIiwianRpIjoiYTJhMDU2YTYxMjA5M2FmODhlMWU1OTA1YTEyYmMyMzU5NDAyZmY1NTY4ZDJhOWJhNjkzZDQ0ZWNmNThlYTZkNGRjNGY5NjMxMzE1YmVkZTAiLCJpYXQiOjE2MTA4ODE2OTgsIm5iZiI6MTYxMDg4MTY5OCwiZXhwIjoxNjQyNDE3Njk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.C5pinY7sIMWqpXTImfPHHdCHU22ppgK_D2T7-k1YHUWgAap6bhS_M2cjF3dc20FHEyTs4Bdypl_67Ez2bZqdDBzJl2tPFtJYaqxsmz3kraMmQTuzURw3rmUKrvO1WCh-TiNQOlgA5wUPgQ_PVGhGzxcTFQsIQ5ceIBFNVyhScJUmjvPkoNojXlbn9K-8LeqLCAkuzc-4UKKOksE_H-NSkwR9tZ-w62wjV4PIBhzX2b4bP5KImvu_eNzT4arZkh-ekNdUevBgXlxWh6uSd5XNTLx7tlGfYkwENn0TGZ5j4VXaRhHRl0SNHG2jgKoTCc9ZEdBqnVunLqSk4npvFvMENEioHV2RNpQhqPWqGtDLlAIgSqVMjen6Tsu2hCAwaktMUzzWzO7GYphvliVa2egwG_tMHSnTp2o_ueFlDkj1CyOhHM1YfklNf_FTWifOotnJS9CPXHQORc-bw6w19ciM2AvTqyGc8UT-aoSFYqtIIt8AyFIlE99cogmZM42ihhGQ9AVebcj_jtEbnP4TXRSnhpH85tc08oTcDUXHGwdg9HMSUWMiybVPURb2uUPMoAIw60tjn4F0edhbm7EuUzb-Ic7QvGbWyTBpMrs4KyG01vQNHQFh_0XqWE3UsapuHvBSQ5zryUDWkhDh2eoI7Pdxxm2HJzbvsolbqDVv7U4AH7k';
+    axios.get('/api/users/' + this.$route.params.userId + '/posts').then(function (res) {
+      _this.posts = res.data;
+    })["catch"](function (err) {
+      console.error('Unable to fetch posts.');
+    })["finally"](function () {
+      _this.postLoading = false;
     });
   }
 });
@@ -20447,24 +20476,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "flex flex-col items-center" },
+    [
+      _c("div", { staticClass: "relative mb-8" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20"
+          },
+          [
+            _c("img", {
+              staticClass:
+                "object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg",
+              attrs: {
+                src:
+                  "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
+                alt: "user profile image"
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-2xl text-gray-100 ml-4" }, [
+              _vm._v(_vm._s(_vm.user.data.attributes.name))
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _vm.postLoading
+        ? _c("p", [_vm._v("Loading posts")])
+        : _vm._l(_vm.posts.data, function(post) {
+            return _c("Post", { key: post.data.id, attrs: { post: post } })
+          }),
+      _vm._v(" "),
+      !_vm.postLoading && _vm.posts.data.length < 1
+        ? _c("p", [_vm._v("Nothing posted yet. Get Started.")])
+        : _vm._e()
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "w-100 h-64 overflow-hidden" }, [
-        _c("img", {
-          staticClass: "object-cover w-full",
-          attrs: {
-            src:
-              "https://upload.wikimedia.org/wikipedia/commons/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg",
-            alt: "user background image"
-          }
-        })
-      ])
+    return _c("div", { staticClass: "w-100 h-64 overflow-hidden z-10" }, [
+      _c("img", {
+        staticClass: "object-cover w-full",
+        attrs: {
+          src:
+            "https://upload.wikimedia.org/wikipedia/commons/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg",
+          alt: "user background image"
+        }
+      })
     ])
   }
 ]
