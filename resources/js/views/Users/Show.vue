@@ -13,7 +13,10 @@
             </div>
 
             <div class="absolute flex items-center bottom-0 right-0 mb-4 mr-12 z-20">
-                <button class="py-1 px-3 bg-gray-400 rounded">Add Friend</button>
+                <button v-if="friendButtonText" class="py-1 px-3 bg-gray-400 rounded"
+                @click="$store.dispatch('sendFriendRequest', $route.params.userId)">
+                    {{ friendButtonText }}
+                    </button>
             </div>
         </div>
         
@@ -61,6 +64,7 @@ import {mapGetters} from 'vuex';
         computed:{
             ...mapGetters({
                 user: 'user',
+                friendButtonText: 'friendButtonText',
             })
         }
     }
