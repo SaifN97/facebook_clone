@@ -7,8 +7,9 @@
             </div>
         </div>
 
-        <div class="flex-1 mx-4">
+        <div class="flex-1 flex mx-4">
             <input type="text" name="body" class="w-full focus:outline-none focus:shadow-outline text-sm rounded-full text-sm pl-4 h-8 bg-gray-200" placeholder="Add a post">
+            <button class="bg-gray-200 ml-2 px-3 py-1 rounded-full">Post</button>
         </div>
         <div>
             <button class="flex justify-center items-center rounded-full w-10 h-10 bg-gray-200">
