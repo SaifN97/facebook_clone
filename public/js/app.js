@@ -2263,28 +2263,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Post: _components_Post_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   name: 'Show',
-  data: function data() {
-    return {
-      posts: null,
-      postLoading: true
-    };
-  },
   mounted: function mounted() {
-    var _this = this;
-
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ';
     this.$store.dispatch('fetchUser', this.$route.params.userId);
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ';
-    axios.get('/api/users/' + this.$route.params.userId + '/posts').then(function (res) {
-      _this.posts = res.data;
-    })["catch"](function (err) {
-      console.error('Unable to fetch posts.');
-    })["finally"](function () {
-      _this.postLoading = false;
-    });
+    this.$store.dispatch('fetchUserPosts', this.$route.params.userId);
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
     user: 'user',
+    posts: 'posts',
+    status: 'status',
     friendButtonText: 'friendButtonText'
   }))
 });
@@ -20532,118 +20519,118 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "flex flex-col items-center" },
-    [
-      _c("div", { staticClass: "relative mb-8" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20"
-          },
-          [
-            _c("img", {
-              staticClass:
-                "object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg",
-              attrs: {
-                src:
-                  "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
-                alt: "user profile image"
-              }
-            }),
+  return _vm.status.user === "success" && _vm.user
+    ? _c(
+        "div",
+        { staticClass: "flex flex-col items-center" },
+        [
+          _c("div", { staticClass: "relative mb-8" }, [
+            _vm._m(0),
             _vm._v(" "),
-            _c("p", { staticClass: "text-2xl text-gray-100 ml-4" }, [
-              _vm._v(_vm._s(_vm.user.data.attributes.name))
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "absolute flex items-center bottom-0 right-0 mb-4 mr-12 z-20"
-          },
-          [
-            _vm.friendButtonText && _vm.friendButtonText !== "Accept"
-              ? _c(
-                  "button",
-                  {
-                    staticClass: "py-1 px-3 bg-gray-400 rounded",
-                    on: {
-                      click: function($event) {
-                        return _vm.$store.dispatch(
-                          "sendFriendRequest",
-                          _vm.$route.params.userId
+            _c(
+              "div",
+              {
+                staticClass:
+                  "absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20"
+              },
+              [
+                _c("img", {
+                  staticClass:
+                    "object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg",
+                  attrs: {
+                    src:
+                      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
+                    alt: "user profile image"
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-2xl text-gray-100 ml-4" }, [
+                  _vm._v(_vm._s(_vm.user.data.attributes.name))
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "absolute flex items-center bottom-0 right-0 mb-4 mr-12 z-20"
+              },
+              [
+                _vm.friendButtonText && _vm.friendButtonText !== "Accept"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "py-1 px-3 bg-gray-400 rounded",
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch(
+                              "sendFriendRequest",
+                              _vm.$route.params.userId
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.friendButtonText) +
+                            "\n            "
                         )
-                      }
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(_vm.friendButtonText) +
-                        "\n            "
+                      ]
                     )
-                  ]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.friendButtonText && _vm.friendButtonText === "Accept"
-              ? _c(
-                  "button",
-                  {
-                    staticClass: " mr-1 py-1 px-3 bg-blue-500 rounded",
-                    on: {
-                      click: function($event) {
-                        return _vm.$store.dispatch(
-                          "acceptFriendRequest",
-                          _vm.$route.params.userId
-                        )
-                      }
-                    }
-                  },
-                  [_vm._v("\n                Accept\n            ")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.friendButtonText && _vm.friendButtonText === "Accept"
-              ? _c(
-                  "button",
-                  {
-                    staticClass: "py-1 px-3 bg-gray-400 rounded",
-                    on: {
-                      click: function($event) {
-                        return _vm.$store.dispatch(
-                          "ignoreFriendRequest",
-                          _vm.$route.params.userId
-                        )
-                      }
-                    }
-                  },
-                  [_vm._v("\n                Ignore\n            ")]
-                )
-              : _vm._e()
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _vm.postLoading
-        ? _c("p", [_vm._v("Loading posts")])
-        : _vm._l(_vm.posts.data, function(post) {
-            return _c("Post", { key: post.data.id, attrs: { post: post } })
-          }),
-      _vm._v(" "),
-      !_vm.postLoading && _vm.posts.data.length < 1
-        ? _c("p", [_vm._v("Nothing posted yet. Get Started.")])
-        : _vm._e()
-    ],
-    2
-  )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.friendButtonText && _vm.friendButtonText === "Accept"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: " mr-1 py-1 px-3 bg-blue-500 rounded",
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch(
+                              "acceptFriendRequest",
+                              _vm.$route.params.userId
+                            )
+                          }
+                        }
+                      },
+                      [_vm._v("\n                Accept\n            ")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.friendButtonText && _vm.friendButtonText === "Accept"
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "py-1 px-3 bg-gray-400 rounded",
+                        on: {
+                          click: function($event) {
+                            return _vm.$store.dispatch(
+                              "ignoreFriendRequest",
+                              _vm.$route.params.userId
+                            )
+                          }
+                        }
+                      },
+                      [_vm._v("\n                Ignore\n            ")]
+                    )
+                  : _vm._e()
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm.status.posts === "loading"
+            ? _c("div", [_vm._v("Loading posts")])
+            : _vm.posts.length < 1
+            ? _c("div", [_vm._v("Nothing posted yet. Get Started.")])
+            : _vm._l(_vm.posts.data, function(post) {
+                return _c("Post", { key: post.data.id, attrs: { post: post } })
+              })
+        ],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -37665,11 +37652,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 __webpack_require__.r(__webpack_exports__);
 var state = {
   user: null,
-  userStatus: null
+  userStatus: null,
+  posts: null,
+  postsStatus: null
 };
 var getters = {
   user: function user(state) {
     return state.user;
+  },
+  posts: function posts(state) {
+    return state.posts;
+  },
+  status: function status(state) {
+    return {
+      user: state.userStatus,
+      posts: state.postsStatus
+    };
   },
   friendship: function friendship(state) {
     return state.user.data.attributes.friendship;
@@ -37699,9 +37697,21 @@ var actions = {
       commit('setUserStatus', 'error');
     });
   },
-  sendFriendRequest: function sendFriendRequest(_ref2, friendId) {
+  fetchUserPosts: function fetchUserPosts(_ref2, userId) {
     var commit = _ref2.commit,
-        state = _ref2.state;
+        dispatch = _ref2.dispatch;
+    commit('setPostsStatus', 'loading');
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ';
+    axios.get('/api/users/' + userId + '/posts').then(function (res) {
+      commit('setPosts', res.data);
+      commit('setPostsStatus', 'success');
+    })["catch"](function (err) {
+      commit('setPostsStatus', 'error');
+    });
+  },
+  sendFriendRequest: function sendFriendRequest(_ref3, friendId) {
+    var commit = _ref3.commit,
+        state = _ref3.state;
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ';
     axios.post('/api/friend-request', {
       'friend_id': friendId
@@ -37709,9 +37719,9 @@ var actions = {
       commit('setUserFriendship', res.data);
     })["catch"](function (err) {});
   },
-  acceptFriendRequest: function acceptFriendRequest(_ref3, userId) {
-    var commit = _ref3.commit,
-        state = _ref3.state;
+  acceptFriendRequest: function acceptFriendRequest(_ref4, userId) {
+    var commit = _ref4.commit,
+        state = _ref4.state;
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ';
     axios.post('/api/friend-request-response', {
       'user_id': userId,
@@ -37720,9 +37730,9 @@ var actions = {
       commit('setUserFriendship', res.data);
     })["catch"](function (err) {});
   },
-  ignoreFriendRequest: function ignoreFriendRequest(_ref4, userId) {
-    var commit = _ref4.commit,
-        state = _ref4.state;
+  ignoreFriendRequest: function ignoreFriendRequest(_ref5, userId) {
+    var commit = _ref5.commit,
+        state = _ref5.state;
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ';
     axios["delete"]('/api/friend-request-response/delete', {
       data: {
@@ -37737,11 +37747,17 @@ var mutations = {
   setUser: function setUser(state, user) {
     state.user = user;
   },
+  setPosts: function setPosts(state, posts) {
+    state.posts = posts;
+  },
   setUserFriendship: function setUserFriendship(state, friendship) {
     state.user.data.attributes.friendship = friendship;
   },
   setUserStatus: function setUserStatus(state, status) {
     state.userStatus = status;
+  },
+  setPostsStatus: function setPostsStatus(state, status) {
+    state.postsStatus = status;
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
