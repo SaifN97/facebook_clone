@@ -20,12 +20,12 @@ export default {
     },
 
     mounted() {
-        this.$store.dispatch('fetchNewsPosts')
+        this.$store.dispatch('fetchPosts')
     },
 
     computed:{
         ...mapGetters({
-            posts: 'newsPosts',
+            posts: 'posts',
             newsStatus: 'newsStatus'
         })
     }
