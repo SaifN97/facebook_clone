@@ -2,8 +2,7 @@
     <div class="flex flex-col items-center" v-if="status.user === 'success' && user">
         <div class="relative mb-8">
             <div class="w-100 h-64 overflow-hidden z-10">
-                <img class="object-cover w-full"
-                 src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg" alt="user background image">
+                <UploadableImage image-width:="1500" image-height="300" location="cover"/>
             </div>
 
             <div class="absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20">
@@ -39,10 +38,11 @@
 
 <script>
 import Post from '../../components/Post.vue';
+import UploadableImage from '../../components/UploadableImage'
 import {mapGetters} from 'vuex'; 
 
     export default {
-  components: { Post },
+  components: { Post, UploadableImage },
         name: 'Show',
 
         mounted() {
