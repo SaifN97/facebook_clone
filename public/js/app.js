@@ -2234,10 +2234,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "UploadableImage",
-  props: ['imageWidth', 'imageHeight', 'location'],
+  props: ['userImage', 'imageWidth', 'imageHeight', 'location', 'classes', 'alt'],
   data: function data() {
     return {
-      dropzone: null
+      dropzone: null,
+      uploadedImage: null
     };
   },
   mounted: function mounted() {
@@ -2245,6 +2246,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     settings: function settings() {
+      var _this = this;
+
       return {
         paramName: 'image',
         url: '/api/user-images',
@@ -2259,9 +2262,12 @@ __webpack_require__.r(__webpack_exports__);
           'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczNWY3NWY2MDNkNmM0ODk1MjEwOTQ5Y2RlNGUyYzU2NjQwOTQ0MTkyNWMyOThlOWM4NWQ1YzlmMzU5ZTQyYjhmZWQxMjk2NGNkZWMxNTgwIn0.eyJhdWQiOiIyIiwianRpIjoiNzM1Zjc1ZjYwM2Q2YzQ4OTUyMTA5NDljZGU0ZTJjNTY2NDA5NDQxOTI1YzI5OGU5Yzg1ZDVjOWYzNTllNDJiOGZlZDEyOTY0Y2RlYzE1ODAiLCJpYXQiOjE2MTE1NzAyMDUsIm5iZiI6MTYxMTU3MDIwNSwiZXhwIjoxNjQzMTA2MjA1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nqXisW4QPcHzznp1UwUWqPPNhabKT5TL8l05JRtSiDx59BS4AeS4WsjfqzWxJdKNDYR8xDsimZi82wtTuB2HfcxORdABt0nOtF2-n4e1uI_HXLQve1R7l8iZ8LuekeBYDp_-YADJ2TqHHOi4CkD9c9vcSP0Ka10_-wMHDS8ugB2_Dfi1D2sZDoUDbYrakpZ8Pa02keTdbMlgrEDnD_BIcDJxgo6mP5-olwSibp0zSFIkNODWhQ5ix1OOm3n3nYAJFUH2EYkYG_QdrF4UU4T5hjRTWDWj1Jxjwmi-KEgQLyQqPV7iuT4sVYaAJt5Nuzn4LNDoLys2bWiLJoLC1n2sjl5oj2HunJR-x4Ci_sTb5iEHx5det0GPrc50jD3o65k4LSbVOPamdT5z54RXJ3Iri7vgZU_3b6MX3ZKnngBTqThmRsOHATBpdfkxMh9NoRgVO47h35Fml75IIlMpi4kz4WK-C-6KRFbufAzI-zSYylOm9NmLnaZSFzl_Acdc8ejcmZQT40-wPFkV7k4NoBnsB9QoFaHwnMzG0sK3OhWJIP0sWyMdC3j7vexk0TzPnZxJ2cIoJs-6OLHjp2YBlFkxpMd4_1zMpcDvZMJ1dgqoOUyON5C5jnGuyXTxyHJt6EpkP7h6y5nx8cU6IzkGbrdkOvTBASVbNvciXaSc8FX4PUQ'
         },
         success: function success(e, res) {
-          alert('uploaded');
+          _this.uploadedImage = res;
         }
       };
+    },
+    imageObject: function imageObject() {
+      return this.uploadedImage || this.userImage;
     }
   }
 });
@@ -2332,6 +2338,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31900,12 +31917,8 @@ var render = function() {
   return _c("div", [
     _c("img", {
       ref: "userImage",
-      staticClass: "object-cover w-full",
-      attrs: {
-        src:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg",
-        alt: "user background image"
-      }
+      class: _vm.classes,
+      attrs: { src: _vm.imageObject.data.attributes.path, alt: _vm.alt }
     })
   ])
 }
@@ -31980,9 +31993,12 @@ var render = function() {
               [
                 _c("UploadableImage", {
                   attrs: {
+                    alt: "user background image",
+                    classes: "object-cover w-full",
                     "image-width": "1500",
                     "image-height": "300",
-                    location: "cover"
+                    location: "cover",
+                    "user-image": _vm.user.data.attributes.cover_image
                   }
                 })
               ],
@@ -31996,20 +32012,23 @@ var render = function() {
                   "absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20"
               },
               [
-                _c("img", {
-                  staticClass:
-                    "object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg",
+                _c("UploadableImage", {
                   attrs: {
-                    src:
-                      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*",
-                    alt: "user profile image"
+                    alt: "user profile image",
+                    classes:
+                      "object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg",
+                    "image-width": "1500",
+                    "image-height": "300",
+                    location: "profile",
+                    "user-image": _vm.user.data.attributes.profile_image
                   }
                 }),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-2xl text-gray-100 ml-4" }, [
                   _vm._v(_vm._s(_vm.user.data.attributes.name))
                 ])
-              ]
+              ],
+              1
             ),
             _vm._v(" "),
             _c(

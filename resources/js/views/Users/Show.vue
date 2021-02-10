@@ -2,12 +2,23 @@
     <div class="flex flex-col items-center" v-if="status.user === 'success' && user">
         <div class="relative mb-8">
             <div class="w-100 h-64 overflow-hidden z-10">
-                <UploadableImage image-width="1500" image-height="300" location="cover"/>
+                <UploadableImage 
+                alt="user background image"
+                classes="object-cover w-full"
+                image-width="1500"
+                image-height="300"
+                location="cover"
+                :user-image="user.data.attributes.cover_image"/>
             </div>
 
             <div class="absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*"
-                 alt="user profile image" class="object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg">
+                  <UploadableImage 
+                alt="user profile image"
+                classes="object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg"
+                image-width="1500"
+                image-height="300"
+                location="profile"
+                :user-image="user.data.attributes.profile_image"/>
                 <p class="text-2xl text-gray-100 ml-4">{{ user.data.attributes.name }}</p>
             </div>
 
