@@ -5,6 +5,7 @@
     :src="imageObject.data.attributes.path" 
     ref="userImage"
     :alt="alt">
+
 </div>
 </template>
 

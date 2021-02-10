@@ -9,6 +9,7 @@
                 image-height="300"
                 location="cover"
                 :user-image="user.data.attributes.cover_image"/>
+
             </div>
 
             <div class="absolute flex items-center bottom-0 left-0 -mb-8 ml-12 z-20">
