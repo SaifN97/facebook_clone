@@ -3,7 +3,7 @@
     <div class="flex flex-col p-4">
         <div class="flex items-center">
             <div class="w-8">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*" alt="Profile image of a user" class="w-8 h-8 object-cover rounded-full">
+                <img :src=" post.data.attributes.posted_by.data.attributes.profile_image.data.attributes.path" alt="Profile image of a user" class="w-8 h-8 object-cover rounded-full">
             </div>
             <div class="ml-6">
                 <div class="text-sm font-bold">{{ post.data.attributes.posted_by.data.attributes.name }}</div>
@@ -60,7 +60,7 @@
 
         <div class="flex m-4 items-center" v-for="comment in post.data.attributes.comments.data">
             <div class="w-8">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1981871a-1560281723.jpg?crop=0.586xw:0.878xh;0.243xw,0.122xh&resize=640:*" alt="Profile image of a user" class="w-8 h-8 object-cover rounded-full">
+                <img :src="comment.data.attributes.commented_by.data.attributes.profile_image.data.attributes.path" alt="Profile image of a user" class="w-8 h-8 object-cover rounded-full">
             </div>
             <div class="ml-4 flex-1">
                 <div class="bg-gray-200 rounded-lg p-2 text-sm">
