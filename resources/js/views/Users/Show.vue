@@ -5,8 +5,8 @@
                 <UploadableImage 
                 alt="user background image"
                 classes="object-cover w-full"
-                image-width="1500"
-                image-height="300"
+                image-width="1200"
+                image-height="500"
                 location="cover"
                 :user-image="user.data.attributes.cover_image"/>
 
@@ -16,8 +16,8 @@
                   <UploadableImage 
                 alt="user profile image"
                 classes="object-cover w-32 h-32 border-4 border-gray-200 rounded-full shadow-lg"
-                image-width="1500"
-                image-height="300"
+                image-width="750"
+                image-height="750"
                 location="profile"
                 :user-image="user.data.attributes.profile_image"/>
                 <p class="text-2xl text-gray-100 ml-4">{{ user.data.attributes.name }}</p>
